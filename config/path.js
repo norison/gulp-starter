@@ -6,17 +6,22 @@ const path = {
   pug: {
     src: pathSrc + "/pug/*.pug",
     watch: pathSrc + "/pug/**/*.pug",
-    dest: pathDest
+    dest: pathDest,
   },
   scss: {
     src: pathSrc + "/scss/*.scss",
     watch: pathSrc + "/scss/**/*.scss",
-    dest: pathDest + "/css"
+    dest: pathDest + "/css",
   },
   js: {
     src: pathSrc + "/js/*.js",
     watch: pathSrc + "/js/**/*.js",
-    dest: pathDest + "/js"
+    dest: pathDest + "/js",
+  },
+  img: {
+    src: pathSrc + "/img/*.{png,jpg,jpeg,gif,svg}",
+    watch: pathSrc + "/img/**/*.{png,jpg,jpeg,gif,svg}",
+    dest: pathDest + "/img",
   },
 };
 

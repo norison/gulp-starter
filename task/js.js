@@ -1,6 +1,7 @@
 import gulp from "gulp";
 import babel from "gulp-babel";
 import webpack from "webpack-stream";
+import rename from "gulp-rename";
 import path from "../config/path.js";
 import app from "../config/app.js";
 
@@ -9,5 +10,6 @@ export default () => {
     .src(path.js.src)
     .pipe(babel())
     .pipe(webpack(app.webpack))
+    .pipe(rename(app.rename.js))
     .pipe(gulp.dest(path.js.dest));
 };

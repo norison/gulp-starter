@@ -1,8 +1,8 @@
 const app = {
-  pug: { pretty: true },
-  sass: { outputStyle: "compressed" },
-  rename: { extname: ".min.css" },
-  webpack: { mode: "development" },
+  pug: { pretty: false },
+  rename: { scss: { extname: ".min.css" }, js: { extname: ".min.js" } },
+  webpack: { mode: "production" },
+  imagemin: { verbose: true },
 };
 
 export default app;

@@ -1,7 +1,10 @@
 import gulp from "gulp";
 import browserSync from "browser-sync";
+import pug from "./pug.js";
+import css from "./css.js";
+import path from "../config/path.js";
 
 export default () => {
-  gulp.watch("./src/pug/**/*.pug", gulp.series("pug", browserSync.reload));
-  gulp.watch("./src/scss/**/*.scss", gulp.series("css", browserSync.reload));
+  gulp.watch(path.pug.watch).on("change", gulp.series(pug, browserSync.reload));
+  gulp.watch(path.css.watch).on("change", gulp.series(css, browserSync.reload));
 };

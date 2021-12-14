@@ -1,5 +1,6 @@
 import del from "del";
+import path from "../config/path.js";
 
 export default () => {
-  return del("./public");
+  return del(path.root);
 };

@@ -1,9 +1,10 @@
 import browserSync from "browser-sync";
+import path from "../config/path.js";
 
 export default () => {
   browserSync.init({
     server: {
-      baseDir: "./public",
+      baseDir: path.root,
     },
   });
 };

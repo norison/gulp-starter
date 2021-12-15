@@ -15,16 +15,9 @@
     "start": "gulp",
     "build": "gulp --production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/norison/gulp-starter.git"
-  },
-  "author": "",
+  "author": "norison",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/norison/gulp-starter/issues"
-  },
-  "homepage": "https://github.com/norison/gulp-starter#readme",
+  "homepage": "",
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",

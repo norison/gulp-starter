@@ -7,6 +7,7 @@ import groupCssMediaQueries from "gulp-group-css-media-queries";
 import csso from "gulp-csso";
 import rename from "gulp-rename";
 import webpCss from "gulp-webp-css";
+import gulpif from "gulp-if";
 import path from "../config/path.js";
 import app from "../config/app.js";
 
@@ -16,11 +17,11 @@ export default () => {
   return gulp
     .src(path.scss.src)
     .pipe(sass())
-    .pipe(webpCss())
+    .pipe(gulpif(app.isProd, webpCss()))
     .pipe(autoprefixer())
     .pipe(shorthand())
     .pipe(groupCssMediaQueries())
-    .pipe(csso())
+    .pipe(gulpif(app.isProd, csso()))
     .pipe(rename(app.rename.scss))
     .pipe(gulp.dest(path.scss.dest));
 };

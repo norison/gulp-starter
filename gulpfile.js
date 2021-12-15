@@ -4,20 +4,22 @@ import pug from "./task/pug.js";
 import scss from "./task/scss.js";
 import js from "./task/js.js";
 import img from "./task/img.js";
+import font from "./task/font.js";
 import server from "./task/server.js";
 import watch from "./task/watch.js";
+import app from "./config/app.js";
 
-const build = gulp.series(
-  clean,
-  gulp.parallel(pug, scss, js, img),
-  gulp.parallel(server, watch)
-);
+const build = gulp.series(clean, gulp.parallel(pug, scss, js, img, font));
+const dev = gulp.series(build, gulp.parallel(server, watch));
 
 export { clean };
 export { pug };
 export { scss };
 export { js };
 export { img };
+export { font };
 export { server };
 export { watch };
-export default build;
+export { build };
+export { dev };
+export default app.isProd ? build : dev;
